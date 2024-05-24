@@ -15,6 +15,7 @@ describe 'User view warehouses details' do
     expect(page).to have_content 'Área: 100000 m²'
     expect(page).to have_content 'Endereço: Avenida do Aeroporto, 1000 CEP: 15000-000'
     expect(page).to have_content 'Galpão destinado para cargas internacionais'
+    expect(page).not_to have_content 'Galpão cadastrado com sucesso'
   end
 
   it 'returns to homescrem' do
