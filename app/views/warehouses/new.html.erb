@@ -1,5 +1,15 @@
 <h1>Criar Galpão</h1>
 
+
+<% if @warehouse_errors.present? %>
+  <p>Atente-se aos erros abaixo:</p>
+
+  <% @warehouse_errors.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+<% end %>
+
 <%= form_with model: @warehouse do |f| %>
   <div>
     <%= f.label :name, "Nome" %>

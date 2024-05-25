@@ -8,8 +8,10 @@ describe "User view homepage" do
   end
 
   it 'view the registered warehouses' do
-    Warehouse.create!(name: 'Rio', code: 'SDU', city: 'Rio de Janeiro', area: 60_000)
-    Warehouse.create!(name: 'Maceio', code: 'MCZ', city: 'Maceio', area: 40_000)
+    Warehouse.create!(name: 'Rio', code: 'SDU', city: 'Rio de Janeiro', area: 60_000, address: 'Av do Porto, 1000',
+                      cep: '20000-000', description: 'Galpão do Rio')
+    Warehouse.create!(name: 'Maceio', code: 'MCZ', city: 'Maceio', area: 40_000, address: 'Av Atlântica, 50',
+                      cep: '80000-000', description: 'Perto do Aeroporto')
 
     visit root_path
 
@@ -24,6 +26,7 @@ describe "User view homepage" do
     expect(page).to have_content '40000 m²'
 
     expect(page).not_to have_content 'Não existem galpões cadastrados.'
+    expect(page).not_to have_content 'Galpão cadastrado com sucesso.'
   end
 
   it 'there are no registered warehouses' do
