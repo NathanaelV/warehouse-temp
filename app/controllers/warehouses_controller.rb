@@ -1,4 +1,6 @@
 class WarehousesController < ApplicationController
+  before_action :set_warehouse, only: %i[show edit update]
+
   def show
     @warehouse = Warehouse.find(params[:id])
   end
@@ -18,9 +20,22 @@ class WarehousesController < ApplicationController
     end
   end
 
+  def edit
+    @warehouse = Warehouse.find(params[:id])
+  end
+  
+  def update
+    @warehouse.update(warehouse_params)
+    redirect_to @warehouse, notice: 'Galpão atualizado com sucesso'
+  end
+  
   private
 
   def warehouse_params
     params.require(:warehouse).permit(:name, :code, :city, :area, :address, :cep, :description)
+  end
+
+  def set_warehouse
+    @warehouse = Warehouse.find(params[:id])
   end
 end
