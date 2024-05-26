@@ -2,7 +2,8 @@
 <h2><%= @warehouse.description %></h2>
 
 <div>
-  <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %>
+  <%= link_to 'Editar Galpão', edit_warehouse_path(@warehouse) %> | 
+  <%= button_to 'Deletar Galpão', @warehouse, method: :delete, onclick: "return confirm('Você tem certeza que deseja excluir o Galpão?');" %>
 </div>
 
 <div>
