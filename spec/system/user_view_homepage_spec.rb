@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "User view homepage" do
+describe 'User view homepage' do
   it 'and view application name' do
     visit root_path
 

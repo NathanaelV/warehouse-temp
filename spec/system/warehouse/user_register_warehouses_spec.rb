@@ -26,7 +26,7 @@ describe 'User register warehouse' do
     fill_in 'CEP', with: '15000-000'
     fill_in 'Área', with: '100000'
     click_on 'Criar Galpão'
-    
+
     expect(page).to have_content 'Nome: Aeroporto SP'
     expect(page).to have_content 'Galpão GRU'
     expect(page).to have_content 'Cidade: Guarulhos'

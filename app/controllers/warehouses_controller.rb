@@ -23,7 +23,7 @@ class WarehousesController < ApplicationController
   def edit
     @warehouse = Warehouse.find(params[:id])
   end
-  
+
   def update
     if @warehouse.update(warehouse_params)
       redirect_to @warehouse, notice: 'Galpão atualizado com sucesso'
@@ -33,12 +33,12 @@ class WarehousesController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @warehouse.destroy
     redirect_to root_path, notice: 'Galpão excluído com sucesso'
   end
-  
+
   private
 
   def warehouse_params

@@ -26,7 +26,7 @@ describe 'User view warehouses details' do
     visit root_path
     click_on 'Aeroporto SP'
     click_on 'Galpões & Estoque'
-    
+
     expect(current_path).to eq root_path
   end
 end
