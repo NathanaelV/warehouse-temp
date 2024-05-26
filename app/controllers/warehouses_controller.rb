@@ -25,8 +25,13 @@ class WarehousesController < ApplicationController
   end
   
   def update
-    @warehouse.update(warehouse_params)
-    redirect_to @warehouse, notice: 'Galpão atualizado com sucesso'
+    if @warehouse.update(warehouse_params)
+      redirect_to @warehouse, notice: 'Galpão atualizado com sucesso'
+    else
+      @warehouse_errors = @warehouse.errors.full_messages
+      flash.now[:alert] = 'Erro ao atualizar o galpão'
+      render :edit
+    end
   end
   
   private
