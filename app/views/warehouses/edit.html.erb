@@ -1,0 +1,22 @@
+<h2>Editar <%= @warehouse.name %></h2>
+
+<div>
+
+  <%= link_to @warehouse do %>
+    Voltar para <%= @warehouse.name %>
+  <% end %>
+  
+</div>
+
+<% if @warehouse_errors.present? %>
+  <p>Atente-se aos erros abaixo:</p>
+
+  <ul>
+    <% @warehouse_errors.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<%= render 'form' %>

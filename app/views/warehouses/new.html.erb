@@ -1,0 +1,14 @@
+<h1>Criar Galpão</h1>
+
+<% if @warehouse_errors.present? %>
+  <p>Atente-se aos erros abaixo:</p>
+
+  <ul>
+    <% @warehouse_errors.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<%= render 'form' %>
