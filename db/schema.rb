@@ -10,16 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_524_140_658) do
-  create_table 'warehouses', force: :cascade do |t|
-    t.string 'name'
-    t.string 'code'
-    t.string 'city'
-    t.integer 'area'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'address'
-    t.string 'cep'
-    t.string 'description'
+ActiveRecord::Schema[7.1].define(version: 2024_05_26_221414) do
+  create_table "suppliers", force: :cascade do |t|
+    t.string "corporate_name"
+    t.string "brand_name"
+    t.string "registration_number"
+    t.string "full_address"
+    t.string "city"
+    t.string "state"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "warehouses", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.string "city"
+    t.integer "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "cep"
+    t.string "description"
+  end
+
 end

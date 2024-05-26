@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      supplier:
+        one: Fornecedor
+        other: Fornecedores
+    attributes:
+      supplier:
+        brand_name: Nome fantasia
+        corporate_name: Razão social
+        registration_number: CNPJ
+        full_address: Endereço
+        city: Cidade
+        state: Estado
+        email: E-mail

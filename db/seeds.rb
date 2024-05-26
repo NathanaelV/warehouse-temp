@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# Warehouse
 Warehouse.find_or_create_by!(name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000,
                              address: 'Avenida do Aeroporto, 1000', cep: '15000-000',
                              description: 'Galpão destinado para cargas internacionais')
@@ -15,3 +16,12 @@ Warehouse.find_or_create_by!(name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos
 Warehouse.find_or_create_by!(name: 'Rio', code: 'RIO', city: 'Rio de Janeiro', area: 1000,
                              address: 'Endereço no Rio de Janeiro, S/N', cep: '25000-000',
                              description: 'Alguma descrição')
+
+# Supplier
+Supplier.find_or_create_by!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '434472216000123',
+                            full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP',
+                            email: 'contato@acme.com.br')
+
+Supplier.find_or_create_by!(corporate_name: 'Spark Industries Brasil LTDA', brand_name: 'Spark',
+                            registration_number: '60279287182000123', full_address: 'Torre da Indústria Brasil LTDA',
+                            city: 'Teresina', state: 'PI', email: 'vendedor@spark.com.br')
