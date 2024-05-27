@@ -42,7 +42,7 @@ describe 'User register warehouse' do
     fill_in 'Nome', with: ''
     click_on 'Criar Galpão'
 
-    expect(page).to have_content 'Galpão não cadastrado'
+    expect(page).to have_content 'Erro ao cadastrar Galpão'
     expect(page).to have_content 'Atente-se aos erros abaixo:'
     expect(page).to have_content 'Nome não pode ficar em branco'
     expect(page).to have_content 'Código não pode ficar em branco'
@@ -51,5 +51,15 @@ describe 'User register warehouse' do
     expect(page).to have_content 'Endereço não pode ficar em branco'
     expect(page).to have_content 'CEP não pode ficar em branco'
     expect(page).to have_content 'Área não pode ficar em branco'
+  end
+
+  it 'flash message only on new view' do
+    visit root_path
+    click_on 'Cadastrar Galpão'
+    fill_in 'Nome' , with: ''
+    click_on 'Criar Galpão'
+    visit root_path
+    
+    expect(page).not_to have_content 'Erro ao cadastrar Galpão'
   end
 end

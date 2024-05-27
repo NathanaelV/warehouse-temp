@@ -15,7 +15,7 @@ class WarehousesController < ApplicationController
       redirect_to @warehouse, notice: 'Galpão cadastrado com sucesso'
     else
       @warehouse_errors = @warehouse.errors.full_messages
-      flash.now[:notice] = 'Galpão não cadastrado'
+      flash.now[:notice] = 'Erro ao cadastrar Galpão'
       render :new
     end
   end
@@ -29,7 +29,7 @@ class WarehousesController < ApplicationController
       redirect_to @warehouse, notice: 'Galpão atualizado com sucesso'
     else
       @warehouse_errors = @warehouse.errors.full_messages
-      flash.now[:alert] = 'Erro ao atualizar o galpão'
+      flash.now[:alert] = 'Erro ao atualizar Galpão'
       render :edit
     end
   end

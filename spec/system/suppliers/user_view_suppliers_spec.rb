@@ -26,5 +26,13 @@ describe "User view supplier" do
     expect(page).to have_content 'Bauru - SP'
     expect(page).to have_content 'Spark'
     expect(page).to have_content 'Teresina - PI'
+    expect(page).not_to have_content 'Nenhum fornecedor cadastrado'
+  end
+
+  it 'when there is one' do
+    visit root_path
+    click_on 'Fornecedores'
+
+    expect(page).to have_content 'Nenhum fornecedor cadastrado'
   end
 end
