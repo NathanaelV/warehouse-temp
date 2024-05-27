@@ -10,7 +10,7 @@ describe 'User view supppliers details' do
     click_on 'ACME'
 
     expect(page).to have_content 'ACME LTDA'
-    expect(page).to have_content 'CNPJ: 434472160000102'
+    expect(page).to have_content 'CNPJ: 434472216000123'
     expect(page).to have_content 'Endereço: Av das Palmas, 100 - Bauru - SP'
     expect(page).to have_content 'E-mail: contato@acme.com'
   end

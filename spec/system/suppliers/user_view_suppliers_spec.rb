@@ -13,6 +13,7 @@ describe "User view supplier" do
   it 'successfully' do
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME', registration_number: '434472216000123',
                      full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP', email: 'contato@acme.com.br')
+
     Supplier.create!(corporate_name: 'Spark Industries Brasil LTDA', brand_name: 'Spark',
                      registration_number: '60279287182000123', full_address: 'Torre da Indústria Brasil LTDA',
                      city: 'Teresina', state: 'PI', email: 'vendedor@spark.com.br')
