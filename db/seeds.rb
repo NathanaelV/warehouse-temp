@@ -22,6 +22,6 @@ Supplier.find_or_create_by!(corporate_name: 'ACME LTDA', brand_name: 'ACME', reg
                             full_address: 'Av das Palmas, 100', city: 'Bauru', state: 'SP',
                             email: 'contato@acme.com.br')
 
-Supplier.find_or_create_by!(corporate_name: 'Spark Industries Brasil LTDA', brand_name: 'Spark',
-                            registration_number: '60279287182000123', full_address: 'Torre da Indústria Brasil LTDA',
-                            city: 'Teresina', state: 'PI', email: 'vendedor@spark.com.br')
+Supplier.find_or_create_by!(corporate_name: 'Stark International LTDA', brand_name: 'Stark Industries',
+                            registration_number: '60279287182000123', full_address: 'Torre da Indústria S/N',
+                            city: 'Teresina', state: 'PI', email: 'vendedor@stark.com')
