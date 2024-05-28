@@ -65,7 +65,7 @@ describe 'User edit Warehouse' do
     expect(page).to have_content 'Código não pode ficar em branco'
     expect(page).to have_content 'Cidade não pode ficar em branco'
     expect(page).to have_content 'CEP não pode ficar em branco'
-    expect(page).to have_content 'Erro ao atualizar o galpão'
+    expect(page).to have_content 'Erro ao atualizar Galpão'
     expect(page).not_to have_content 'Erro ao editar o Galpão'
     expect(page).not_to have_content 'Galpão atualizado com sucesso'
   end
@@ -81,5 +81,19 @@ describe 'User edit Warehouse' do
     click_on 'Voltar para Rio'
 
     expect(current_path).to eq warehouse_path(warehouse)
+  end
+
+  it 'flash message only on edit view' do
+    Warehouse.create!(name: 'Rio', code: 'RIO', city: 'Rio de Janeiro', area: 1000,
+                      address: 'Endereço no Rio de Janeiro, S/N', cep: '25000-000', description: 'Alguma descrição')
+
+    visit root_path
+    click_on 'Rio'
+    click_on 'Editar Galpão'
+    fill_in 'Nome' , with: ''
+    click_on 'Atualizar Galpão'
+    visit root_path
+    
+    expect(page).not_to have_content 'Erro ao atualizar Galpão'
   end
 end

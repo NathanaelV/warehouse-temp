@@ -1,0 +1,14 @@
+<p><%= link_to 'Voltar para Fornecedores', suppliers_path %></p>
+
+<% if @supplier_errors.present? %>
+  <p>Atente-se aos erros abaixo:</p>
+
+  <ul>
+    <% @supplier_errors.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<%= render 'form' %>

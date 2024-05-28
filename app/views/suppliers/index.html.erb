@@ -1,16 +1,29 @@
+<div>
+  <p><%= link_to 'Cadastrar Fornecedor', new_supplier_path %></p>
+</div>
+
 <table>
   <thead>
+
     <tr>
       <th>Nome</th>
       <th>Localização</th>
     </tr>
+
   </thead>
+
   <tbody>
     <% @suppliers.each do |supplier| %>
+
       <tr>
         <td><%= link_to supplier.brand_name, supplier %></td>
         <td><%= supplier.city %> - <%= supplier.state %></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
+
+<% if @suppliers.empty? %>
+  <p>Nenhum fornecedor cadastrado</p>
+<% end %>
